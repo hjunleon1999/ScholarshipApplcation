@@ -693,11 +693,12 @@ g[data-name="Bubble"]{
 
 #prompt{
 	min-width:0;
+	max-width: 6vw;
 	opacity:90%;
 	background-color: #fff;
 	border: solid 1px black;
 	position:absolute;
-	min-height: 5vh;
+	min-height: 2.5vw;
 	transition: min-width 0.25s linear;
 	z-index:5;
 	text-align: center;
@@ -710,6 +711,7 @@ g[data-name="Bubble"]{
 	overflow-wrap: break-word;
 	padding-left: 0.25vw;
 	padding-right: 0.25vw;
+	font-size: 1.25vw;
 }
 #svgContainer{
 	width:100%;
@@ -738,7 +740,7 @@ g[data-name="Bubble"]{
 	padding-right: 0.5vw;
 	padding-top: 2.5vh;
 	padding-bottom: 2.5vh;
-	min-height:10vh;
+	min-height:5vw;
 	border-radius: 10px;
 	z-index: 98;
 }
@@ -753,14 +755,14 @@ g[data-name="Bubble"]{
 	display:flex;
 	justify-content: center;
 	align-items: center;
-	font-size: 1.5em;
+	font-size: 1.5vw;
 	padding-left: 1.5vw;
 	padding-right: 1.5vw;
 
 }
 #messagePopupLabel{
 	text-align: left;
-	font-size: 1.75em;
+	font-size: 1.75vw;
 	padding-left: 1vw;
 }
 #filter, #moonlight,#prompt,#lamp{
@@ -896,7 +898,7 @@ g[data-name="Bubble"]{
 }*/
 .dropDown{
 	position:relative;
-	font-size:1.25em;
+	font-size:1.25vw;
 		/*height: 7.5vh;
 			display:flex;
 			align-items: center;
