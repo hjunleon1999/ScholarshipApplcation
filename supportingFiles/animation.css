@@ -804,7 +804,7 @@ g[data-name="Bubble"]{
 	flex:5;
 	margin-left: 5vw;
 	margin-right: 5vw;
-	font-size:1.5em;
+	font-size:1.5vw;
 	display:flex;
 	/*align-items: center;*/
 	flex-direction: column;
@@ -813,16 +813,21 @@ g[data-name="Bubble"]{
 	padding-left: 20vw;
 	padding-right: 20vw;*/
 }
+#signatureWrap{
+	height: 15vh;
+	margin-top: 2.5vw;
+	position: relative;
+}
 #signature{
 	/*
 	font-size:3em;
 	font-family:"Hasiant";*/
 	text-align:right;
-	height: 15vh;
-	margin-top: 2.5vw;
+	width:20vw;
+	position: absolute;
+	right:0;
 }
 #signature > svg{
-	height:100%;
 	display: inline-block;
 }
 
