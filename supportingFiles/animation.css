@@ -1087,8 +1087,8 @@ flex:4;
 }
 #overlayClose{
 	position:absolute;
-	top: 20px;
-	right: 20px;
+	top: 2vh;
+	right: 2vw;
 	z-index: 7;
 	cursor: pointer;
 	height: 3vh;
