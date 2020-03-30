@@ -192,10 +192,10 @@ let messages = {
     "Just a passing thought, do plant nurseries hurt the environment more than they benefit?"
   ],
   window:[
-    " I hope it rains tonight so that I'll have a good night's sleep..\\*yawns*~",
+    "I hope it rains tonight so that I'll have a good night's sleep..\\*yawns*~",
     "The view tonight sure is beautiful...\\ But computer graphics can make just as or more stunning sceneries. \\ What an amazing (virtual) era we live in~",
     "Sometimes I look outside, contemplating what I would be, \\how the world would evolve, \\where's my place and value yada yada..\\ Only through my efforts to understand and give to this world can I believe that I have a chance to succeed",
-    "sometimes there's birds that perch here, though not owls, at least not that I know off"
+    "Sometimes there's birds that perch here, though not owls, at least not that I know off"
   ],
   bed:[
     "What's the point of packing the bed when it's gonna get messy when I sleep tonight?",
@@ -212,7 +212,7 @@ let messages = {
   ],
   clock:[
     "Tick...\\Tock...\\Tick...\\Tock...\\Just an ordinary alarm clock, nothing more~",
-    "Since smart watches are a thing, why not smart clocks? Oh... smartphones huh."
+    "Since smart watches are a thing, why not smart clocks? Oh... smartphones..\\ Feels like not everything has to be made \"smart\"."
   ],
   headset:[
     "Nothing beats a well-earned gaming session after achieving my KPI for the day!",
@@ -220,7 +220,7 @@ let messages = {
     "My dad used to tell me good sound was only possible the rich. Look at us now, surround sound and strong bass are consumer standards!"
   ],
   metronome:[
-    "My music teacher always insisted on me using the metronome to practice. 'Such a drag' was what I thought \\Until I realised that patience and methodical practice improved my musicianship skills. \\Looking forward to the journey itself made much more sense ever since.",
+    "My music teacher always insists on me using the metronome to practice. 'Such a drag' was what I thought \\That's until I realise that patience and methodical practice improved my musicianship skills. \\Looking forward to the journey itself made much more sense ever since.",
   ],
   sweater:[
     "Trusty sweater that keeps me warm in office without compromising fashion!"
