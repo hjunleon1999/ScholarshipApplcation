@@ -31,15 +31,15 @@
   background: rgb(82, 48, 75);
 }
 html, body{
-	height:100%;
 	width:100%;
 	margin:0;
 	padding:0;
 	-ms-overflow-style: none;
 }
+/*
 body::-webkit-scrollbar{
 	display: none;
-}
+}*/
 #svgContainer > svg{
 	width:100%;
 	height:100%;
@@ -94,7 +94,12 @@ transition: transform 0.5s;
 }
 #headShadow2{
 	transition: transform 0.5s ;
-	transform-origin:center 74%;
+	-moz-transform-origin: 824px 505px;
+-ms-transform-origin:  824px 505px;
+-o-transform-origin: 824px 505px;
+-webkit-transform-origin:  824px 505px;
+	transform-origin:824px 505px;
+	transform:translate(824px, 505px);
 }
 
 #upperFace{
@@ -121,6 +126,7 @@ transition: transform 0.5s;
 	transform: translateY(1%);
 }
 .scaleDownScreenFace{
+	transform-origin:824px 505px;
 	transform: translate(824px, 525px);
 }
 .lensFlare{
@@ -693,7 +699,8 @@ g[data-name="Bubble"]{
 
 #prompt{
 	min-width:0;
-	max-width: 6vw;
+	/*
+	max-width: 7.6vw;*/
 	opacity:90%;
 	background-color: #fff;
 	border: solid 1px black;
@@ -713,9 +720,13 @@ g[data-name="Bubble"]{
 	padding-right: 0.25vw;
 	font-size: 1.25vw;
 }
+#prompt > div {
+	margin-left: 1vw;
+	margin-right: 1vw;
+}
 #svgContainer{
 	width:100%;
-	height:100%;
+	height:100vh;
 }
 #messagePopContainer{
 	background-color: rgba(0,0,0,0);
@@ -787,7 +798,7 @@ g[data-name="Bubble"]{
 	justify-content: center;
 	align-items: center;
 	text-align:center;
-	height:100%;
+	height:auto;
 	width:100%;
 	background-color: #325551;
 	color: #CCD1BE;
@@ -802,18 +813,29 @@ g[data-name="Bubble"]{
             user-select: none; /* Non-prefixed version, currently
                                   supported by Chrome, Opera and Firefox */
 }
+
+#secondPage > div{
+/*	padding-top: 2.5vw;
+  padding-bottom: 2.5vw;*/
+	padding-top: 2.5vh;
+	padding-bottom: 2.5vh;
+}
+
 #about{
 	flex:5;
 	margin-left: 5vw;
 	margin-right: 5vw;
 	font-size:1.5vw;
 	display:flex;
-	/*align-items: center;*/
 	flex-direction: column;
 	justify-content: center;
 	/*
 	padding-left: 20vw;
 	padding-right: 20vw;*/
+
+	padding-top: 2.5vh;
+	padding-bottom: 2.5vh;
+	position: relative;
 }
 #signatureWrap{
 	height: 15vh;
@@ -828,9 +850,13 @@ g[data-name="Bubble"]{
 	width:20vw;
 	position: absolute;
 	right:0;
+	bottom:0;
+	/*height: 100%;*/
+
 }
 #signature > svg{
 	display: inline-block;
+/*	height: 100%;*/
 }
 
 #sigPath{
@@ -1022,10 +1048,11 @@ g[data-name="Bubble"]{
 	fill:#ccd1be;
 }
 .dropDownTitle>div:nth-child(1){
-	flex:1;
 	/*
 		margin-top: 3.5vh;
 		margin-bottom: 3.5vh;*/
+		margin-left: 1vw;
+		margin-right:1vw;
 		display:inline-block;
 }
 .dropDownTitle>div:nth-child(2){
@@ -1038,7 +1065,7 @@ flex:4;
 	display: block;
   margin-left: auto;
   margin-right: auto;
-  width: 20%;
+  width: 1vw;
 }
 
 #overlay{
@@ -1091,4 +1118,20 @@ video{
 	width:100%;
 	margin-left: auto;
   margin-right: auto;
+}
+@media only screen and (max-width: 992px) {
+	#secondPage{
+		display:block;
+		text-align:center;
+		width:100%;
+		background-color: #325551;
+		color: #CCD1BE;
+		position: relative;
+	}
+	.dropDown{
+		font-size: 1.75vw !important;
+	}
+	.dropDownContent{
+		width:50%;
+	}
 }
