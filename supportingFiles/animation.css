@@ -965,6 +965,9 @@ g[data-name="Bubble"]{
 	padding-top: 2.5vh;
 	padding-bottom: 2.5vh;
 }
+.dropDownTitle > div:nth-child(2){
+	padding-right: 1vw;
+}
 .dropDownTitle:hover, .dropDownTitle:focus {
   background-color: #52304B;
 	color: #CCD1BE;
@@ -988,6 +991,7 @@ g[data-name="Bubble"]{
 	padding-top: 2.5vh;
 	padding-bottom: 2.5vh;
 		padding-left: 1vw;
+		padding-right: 1vw;
 		background-color: #DAB567;
 		margin-bottom: 0.5vh;
 	text-align: left;
