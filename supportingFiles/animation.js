@@ -221,7 +221,6 @@ let messages = {
   ],
   metronome:[
     "My music teacher always insisted on me using the metronome to practice. 'Such a drag' was what I thought \\Until I realised that patience and methodical practice improved my musicianship skills. \\Looking forward to the journey itself made much more sense ever since.",
-
   ],
   sweater:[
     "Trusty sweater that keeps me warm in office without compromising fashion!"
@@ -364,13 +363,14 @@ let mouseMoveId;
 //let thenMouseMoveType;
 let now = Date.now();
 let then = Date.now();
+let thenType = Date.now();
 let frameSkip = 0;
 let isTilted = false;
 
 function hasReachedSecondPage(){
 
-  console.log(document.getElementById("svgContainer").getBoundingClientRect().bottom);
-  console.log(document.documentElement.scrollTop);
+  //console.log(document.getElementById("svgContainer").getBoundingClientRect().bottom);
+  //console.log(document.documentElement.scrollTop);
   if(document.getElementById("svgContainer").getBoundingClientRect().bottom <=200 ){//< document.documentElement.scrollTop){
     return true;
   }
@@ -543,7 +543,7 @@ window.onload = () => {
 	}
   function bodyTyping(){
     now = Date.now();
-    elapsed = now - then;
+    let elapsed = now - then;
     if(isTilted){
       if(elapsed > fps * 2){
         mouseMoveIndex++;
@@ -572,10 +572,6 @@ window.onload = () => {
         then = now - (elapsed % fps);
       }
 
-      //cancelAnimationFrame(bodyTypeId);
-      /*setTimeout(function() {
-          bodyTypeId = requestAnimationFrame(bodyTyping);
-      }, fps*2);*/
     }
     //console.log("bodyTyping fired");
     //console.log(frameSkip);=
@@ -583,6 +579,7 @@ window.onload = () => {
     cancelAnimationFrame(bodyTypeId);
     bodyTypeId = requestAnimationFrame(bodyTyping);
   }
+  /*
   function mouseMoving(){
     if(frameSkip!=4){
       frameSkip++;
@@ -594,21 +591,17 @@ window.onload = () => {
       greenShirt.forEach((item, i) => {
         item.setAttributeNS(null,"d",mouseMovePaths[mouseMoveIndex]);
       });
-      /*
-      cancelAnimationFrame(mouseMoveId);
-      setTimeout(function() {
-          mouseMoveId = requestAnimationFrame(mouseMoving);
-      }, fps*2);*/
 
       frameSkip = 0;
 
     }
     cancelAnimationFrame(mouseMoveId);
     requestAnimationFrame(mouseMoving);
-  }
+  }*/
 	//pupil1.className = "pupils";
 	function eachWord(){
 		if(i < ideTexts.length){
+
 			attrs = reAttr.exec(ideTexts[i]);
 			//console.log(attrs[1]);
 			if(attrs[1].includes(" ")){
@@ -655,20 +648,31 @@ window.onload = () => {
       txt = txt.replace(/&quot;/g,"\"");
 			let j = 0;
 			var speed = 35;
+      let typeWriterId;
 			function typeWriter() {
 				if (j < txt.length) {
-          let txtNode;
-          txtNode = document.createTextNode(txt[j]);
-          //console.log(txt[j]);
-					elem.appendChild(txtNode);
-					elem1.appendChild(txtNode.cloneNode(true));
-					j++;
+          //now = Date.now();
+          //let elapsed = now - thenType;
+        //  if(elapsed > fps){
+            let txtNode;
+            txtNode = document.createTextNode(txt[j]);
+            //console.log(txt[j]);
+  					elem.appendChild(txtNode);
+  					elem1.appendChild(txtNode.cloneNode(true));
+  					j++;
+    //      }
+
+      //    thenType = now - (elapsed % fps);
+    //      cancelAnimationFrame(typeWriterId);
+    //      typeWriterId = requestAnimationFrame(typeWriter);
 					setTimeout(typeWriter, fps);
 				}
 			}
 			typeWriter();
-			i++;
+      //typeWriterId = requestAnimationFrame(typeWriter);
+      i++;
 			setTimeout(eachWord, speed * (txt.length));
+
 		} else {
 			tiltHead();
 		}
@@ -714,7 +718,7 @@ window.onload = () => {
         twinklingStar(item);
 				setInterval(function(){
 					twinklingStar(item);
-				},2200);
+				},2345);
 			},index*300);
 
 		});
@@ -827,8 +831,6 @@ window.onload = () => {
 	let waterBbox = document.getElementById("waterbbox").getBBox();
 	//console.log(waterBbox.y);
 	//keyframeNode = document.createTextNode(".floatingBubs{transform: translateY("+ -(waterBbox.height) +"px !important)}");
-
-
 
 	let bubbles = [
 		{
@@ -1121,7 +1123,7 @@ window.onload = () => {
 		spawnBubble(bubbles[index],index);
 	}
 	pickBubble();
-	setInterval(pickBubble,1000);
+	setInterval(pickBubble,Math.floor(Math.random() * 3000) + 1000);
 
 
 	//building lights
@@ -1208,8 +1210,8 @@ window.onload = () => {
       clientBoxes[prop][index].bottom += document.documentElement.scrollTop;
       //console.log(clientBoxes[prop][index].top);
       me[index].addEventListener("mouseenter",function(e){
-        console.log("mouseOvertriggered");
-        console.log(this);
+        //console.log("mouseOvertriggered");
+        //console.log(this);
 
         let prompt = document.getElementById("prompt");
         if(document.getElementById("prompt") == null){
@@ -1350,7 +1352,7 @@ window.onload = () => {
           hasClickedOnce = false;
           j = 0;
           chunkIndex++;
-          console.log(chunkIndex);
+          //console.log(chunkIndex);
           typeWriter(txtChunks[chunkIndex]);
 
       } else {
@@ -1366,10 +1368,14 @@ window.onload = () => {
 
     function typeWriter(txt) {
       //console.log("txt: " + txt);
+
       if (j < txt.length) {
         //let txtNode;
         //txtNode = document.createTextNode(txt[j]);
         //msgBox.appendChild(txtNode);
+        //now = Date.now();
+        //elapsed = now - then;
+      //  if(elapsed > 200){
         msgBox.innerHTML+=txt[j];
         if(rePunctuation.test(txt[j]) == true){
           typeWriterTimer= setTimeout(function(){
@@ -1431,12 +1437,12 @@ function scrollToTop(scrollDuration) {
     blender: false
   }
   let dropDownFolder = document.querySelectorAll(".dropDownFolder");
-  console.log(dropDownFolder[0]);
+  //console.log(dropDownFolder[0]);
   for(var j = 0; j < dropDownFolder.length;j++){
     dropDownFolder[j].addEventListener("click",function(e){
       //let category = this.childNodes[1].innerHTML;
       //console.log(category);
-      console.log(this.id);
+      //console.log(this.id);
       //console.log(this.querySelector(".dropDownTitle"));
       e.stopPropagation();
       /*switch(category){
@@ -1485,7 +1491,7 @@ function scrollToTop(scrollDuration) {
   for(var j = 0; j < dropDownLinks.length; j++){
     dropDownLinks[j].onclick = function(e){
       e.stopPropagation();
-      console.log("link clicked");
+      //console.log("link clicked");
       //let link;
 
       let elemToBeAdded;
@@ -1526,11 +1532,11 @@ function scrollToTop(scrollDuration) {
 
   //animate signature when on secondPage
   if(hasReachedSecondPage()){
-    console.log("Reached secondPage");
+    //console.log("Reached secondPage");
     document.getElementById("sigPath").setAttributeNS(null,"class","aniSig");
     document.getElementById("sigStrike").setAttributeNS(null,"class","aniSig1");
   } else {
-      console.log("Not yet secondPage");
+      //console.log("Not yet secondPage");
     document.getElementById("sigPath").setAttributeNS(null,"class","");
   document.getElementById("sigStrike").setAttributeNS(null,"class","");
   }
@@ -1538,7 +1544,7 @@ function scrollToTop(scrollDuration) {
 }
 
 window.onresize = (e) => {
-  console.log(e);
+  //console.log(e);
   for(let prop in prompts){
     let me = document.querySelectorAll("[hover='"+ prop +"']");
     for(var index = 0; index < me.length;index++){
@@ -1555,7 +1561,7 @@ window.onresize = (e) => {
       clientBoxes[prop][index].bottom += document.documentElement.scrollTop;
     }
   }
-  console.log(clientBoxes);
+  //console.log(clientBoxes);
 }
 
 window.onscroll = function(){
