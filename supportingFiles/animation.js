@@ -1253,16 +1253,21 @@ window.onload = () => {
     let prompt = document.createElement("div");
     let textWrap = document.createElement("div");
     let classname = e.getAttributeNS(null,"hover");
+    let numOfLetters = 0;
     if(prompts[classname].includes(" ")){
       let words = prompts[classname].split(" ");
       let numWords;
       for(numWords = 0; numWords < words.length - 1; numWords++){
         textWrap.appendChild(document.createTextNode(words[numWords]));
+        if(words[numWords].length > numOfLetters){
+          numOfLetters = words[numWords].length;
+        }
         textWrap.appendChild(document.createElement("br"));
       }
       textWrap.appendChild(document.createTextNode(words[numWords]));
     } else {
       textWrap.prepend(document.createTextNode(prompts[classname]));
+      numOfLetters = prompts[classname].length;
     }
     prompt.appendChild(textWrap);
     prompt.setAttribute("id","prompt");
@@ -1273,10 +1278,16 @@ window.onload = () => {
     //let clientBound = e.getBoundingClientRect();
     //mouseX = e.clientX + document.body.scrollLeft + document.documentElement.scrollLeft;
     //mouseY = e.clientY + document.body.scrollTop + document.documentElement.scrollTop - prompt.getBoundingClientRect().height/2;
+
+    setTimeout(function(){
+      prompt.style.width = (1.25*numOfLetters - numOfLetters/8) + "vw";
+      prompt.style.minWidth = "5vw";
+    },100);
+    /*
     setTimeout(function(){
         prompt.style.minWidth = "5vw";
-    },10);
-
+    },250);
+*/
     xp = mouseX;
     yp = mouseY;
   //  let promptBound = prompt.getBoundingClientRect();

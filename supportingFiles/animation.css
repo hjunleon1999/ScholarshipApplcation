@@ -700,6 +700,7 @@ g[data-name="Bubble"]{
 
 #prompt{
 	min-width:0;
+	width:0;
 	/*
 	max-width: 7.6vw;*/
 	opacity:90%;
@@ -707,7 +708,7 @@ g[data-name="Bubble"]{
 	border: solid 1px black;
 	position:absolute;
 	min-height: 2.5vw;
-	transition: min-width 0.25s linear;
+	transition: width 0.25s linear, min-width 0.25s linear;
 	z-index:5;
 	text-align: center;
 	display:flex;
@@ -716,7 +717,7 @@ g[data-name="Bubble"]{
 	left:0;
 	top:0;
 	font-family:Consolas;
-	overflow-wrap: break-word;
+	overflow-wrap: anywhere;
 	padding-left: 0.25vw;
 	padding-right: 0.25vw;
 	font-size: 1.25vw;
