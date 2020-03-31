@@ -1280,7 +1280,7 @@ window.onload = () => {
     //mouseY = e.clientY + document.body.scrollTop + document.documentElement.scrollTop - prompt.getBoundingClientRect().height/2;
 
     setTimeout(function(){
-      prompt.style.width = (1.25*numOfLetters - numOfLetters/8) + "vw";
+      prompt.style.width = (1.25*numOfLetters - numOfLetters/7) + "vw";
       prompt.style.minWidth = "5vw";
     },100);
     /*
